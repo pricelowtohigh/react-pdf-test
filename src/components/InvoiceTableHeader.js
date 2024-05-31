@@ -14,32 +14,38 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
         flexGrow: 1,
     },
-    description: {
-        width: '60%',
+    partNature: {
+        width: '30%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
-    qty: {
-        width: '10%',
+    partNumber: {
+        width: '25%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
-    rate: {
+    qoh: {
         width: '15%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
-    amount: {
-        width: '15%'
+    negLoc: {
+        width: '15%',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
+    primeLoc: {
+        width: '15%',
+    }
   });
 
   const InvoiceTableHeader = () => (
     <View style={styles.container}>
-        <Text style={styles.description}>Item Description</Text>
-        <Text style={styles.qty}>Qty</Text>
-        <Text style={styles.rate}>@</Text>
-        <Text style={styles.amount}>Amount</Text>
+        <Text style={styles.partNature}>Part Nature</Text>
+        <Text style={styles.partNumber}>Part #</Text>
+        <Text style={styles.qoh}>QOH</Text>
+        <Text style={styles.negLoc}>Negative Loc.</Text>
+        <Text style={styles.primeLoc}>Prime Loc.</Text>
     </View>
   );
   

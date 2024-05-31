@@ -4,7 +4,6 @@ import InvoiceTitle from './InvoiceTitle'
 import BillTo from './BillTo'
 import InvoiceNo from './InvoiceNo'
 import InvoiceItemsTable from './InvoiceItemsTable'
-import InvoiceThankYouMsg from './InvoiceThankYouMsg'
 
 
 const styles = StyleSheet.create({
@@ -12,8 +11,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Helvetica',
         fontSize: 11,
         paddingTop: 30,
-        paddingLeft:60,
-        paddingRight:60,
+        paddingLeft:30,
+        paddingRight:30,
         lineHeight: 1.5,
         flexDirection: 'column',
     }, 
@@ -29,11 +28,10 @@ const styles = StyleSheet.create({
             <Document>
                 <Page size="A4" style={styles.page}>
                     {/* <Image style={styles.logo} src={logo} /> */}
-                    <InvoiceTitle title='Invoice'/>
-                    <InvoiceNo invoice={invoice}/>
-                    <BillTo invoice={invoice}/>
+                    <InvoiceTitle title='Negative Invoice Report'/>
+                    {/* <InvoiceNo invoice={invoice}/>
+                    <BillTo invoice={invoice}/> */}
                     <InvoiceItemsTable invoice={invoice} />
-                    <InvoiceThankYouMsg />
                 </Page>
             </Document>
         );

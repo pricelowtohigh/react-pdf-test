@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
         marginTop: 24,
     },
     reportTitle:{
-        color: '#61dafb',
-        letterSpacing: 4,
+        color: 'black',
+        letterSpacing: 1,
         fontSize: 25,
         textAlign: 'center',
         textTransform: 'uppercase',

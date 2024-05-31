@@ -9,35 +9,59 @@ const invoice = {
     trans_date: "2019-09-12",
     due_date: "2019-10-12",
     items: [
+      // {
+      //   sno: 1,
+      //   desc: "ad sunt culpa occaecat qui",
+      //   qty: 5,
+      //   rate: 405.89,
+      // },
+      // {
+      //   sno: 2,
+      //   desc: "cillum quis sunt qui aute",
+      //   qty: 5,
+      //   rate: 373.11,
+      // },
+      // {
+      //   sno: 3,
+      //   desc: "ea commodo labore culpa irure",
+      //   qty: 5,
+      //   rate: 458.61,
+      // },
+      // {
+      //   sno: 4,
+      //   desc: "nisi consequat et adipisicing dolor",
+      //   qty: 10,
+      //   rate: 725.24,
+      // },
+      // {
+      //   sno: 5,
+      //   desc: "proident cillum anim elit esse",
+      //   qty: 4,
+      //   rate: 141.02,
+      // },
       {
-        sno: 1,
-        desc: "ad sunt culpa occaecat qui",
-        qty: 5,
-        rate: 405.89,
+        sno: 6,
+        partNature: 'End Item - Non Inventoried',
+        partNumber: 'M-1827-W10',
+        qoh: -1,
+        negativeLoc: 'DOCK',
+        primeLoc: 'DS_EZUP'
       },
       {
-        sno: 2,
-        desc: "cillum quis sunt qui aute",
-        qty: 5,
-        rate: 373.11,
+        sno: 7,
+        partNature: 'End Item - Regular',
+        partNumber: 'M-40100-PSA',
+        qoh: -1,
+        negativeLoc: 'DOCK',
+        primeLoc: 'DS_EZUP'
       },
       {
-        sno: 3,
-        desc: "ea commodo labore culpa irure",
-        qty: 5,
-        rate: 458.61,
-      },
-      {
-        sno: 4,
-        desc: "nisi consequat et adipisicing dolor",
-        qty: 10,
-        rate: 725.24,
-      },
-      {
-        sno: 5,
-        desc: "proident cillum anim elit esse",
-        qty: 4,
-        rate: 141.02,
+        sno: 8,
+        partNature: 'End Item - Regular',
+        partNumber: 'M-6007-Z427AFT',
+        qoh: -1,
+        negativeLoc: 'DOCK',
+        primeLoc: 'DOCK'
       },
     ],
   };

@@ -12,24 +12,29 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
         color: 'white'
     },
-    description: {
-        width: '60%',
+    partNature: {
+        width: '30%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
-    qty: {
-        width: '10%',
+    partNumber: {
+        width: '25%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
-    rate: {
+    qoh: {
         width: '15%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
-    amount: {
+    negativeLoc: {
         width: '15%',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
+    primeLoc: {
+        width: '15%',
+    }
    
   });
 
@@ -37,10 +42,11 @@ const InvoiceTableBlankSpace = ({rowsCount}) => {
     const blankRows = Array(rowsCount).fill(0)
     const rows = blankRows.map( (x, i) => 
         <View style={styles.row} key={`BR${i}`}>
-            <Text style={styles.description}>-</Text>
-            <Text style={styles.qty}>-</Text>
-            <Text style={styles.rate}>-</Text>
-            <Text style={styles.amount}>-</Text>
+            <Text style={styles.partNature}>-</Text>
+            <Text style={styles.partNumber}>-</Text>
+            <Text style={styles.qoh}>-</Text>
+            <Text style={styles.negativeLoc}>-</Text>
+            <Text style={styles.primeLoc}>-</Text>
         </View>
     )
     return (<Fragment>{rows}</Fragment> )

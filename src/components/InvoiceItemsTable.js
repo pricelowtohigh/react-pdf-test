@@ -5,7 +5,7 @@ import InvoiceTableRow from './InvoiceTableRow'
 import InvoiceTableBlankSpace from './InvoiceTableBlankSpace'
 import InvoiceTableFooter from './InvoiceTableFooter'
 
-const tableRowsCount = 11;
+const tableRowsCount = 10;
 
 const styles = StyleSheet.create({
     tableContainer: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         <InvoiceTableHeader />
         <InvoiceTableRow items={invoice.items} />
         <InvoiceTableBlankSpace rowsCount={ tableRowsCount - invoice.items.length} />
-        <InvoiceTableFooter items={invoice.items} />
+        {/* <InvoiceTableFooter items={invoice.items} /> */}
     </View>
   );
   
