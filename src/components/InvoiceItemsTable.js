@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
     },
 });
 
-  const InvoiceItemsTable = ({invoice}) => (
+  const InvoiceItemsTable = ({templates}) => (
     <View style={styles.tableContainer}>
-        <InvoiceTableHeader />
-        <InvoiceTableRow items={invoice.items} />
-        <InvoiceTableBlankSpace rowsCount={ tableRowsCount - invoice.items.length} />
+        {/* <InvoiceTableHeader /> */}
+        <InvoiceTableRow templates={templates} />
+        {/* <InvoiceTableBlankSpace rowsCount={ tableRowsCount - invoice.length} /> */}
         {/* <InvoiceTableFooter items={invoice.items} /> */}
     </View>
   );

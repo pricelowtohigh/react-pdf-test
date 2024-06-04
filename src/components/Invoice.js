@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Page, Document, StyleSheet } from '@react-pdf/renderer';
 import InvoiceTitle from './InvoiceTitle'
 import BillTo from './BillTo'
@@ -22,18 +22,18 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto'
     }
-  });
+  });  
   
-  const Invoice = ({invoice}) => (
+  const Invoice = ({templates}) => (
             <Document>
                 <Page size="A4" style={styles.page}>
                     {/* <Image style={styles.logo} src={logo} /> */}
                     <InvoiceTitle title='Negative Invoice Report'/>
                     {/* <InvoiceNo invoice={invoice}/>
                     <BillTo invoice={invoice}/> */}
-                    <InvoiceItemsTable invoice={invoice} />
+                    <InvoiceItemsTable templates={templates} />
                 </Page>
             </Document>
         );
-  
-  export default Invoice
+
+export default Invoice

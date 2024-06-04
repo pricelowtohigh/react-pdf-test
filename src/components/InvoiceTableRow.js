@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
     },
     partNature: {
-        width: '30%',
+        width: '50%',
         textAlign: 'left',
         borderRightColor: borderColor,
         borderRightWidth: 1,
@@ -26,38 +26,39 @@ const styles = StyleSheet.create({
         paddingRight: 8,
     },
     qoh: {
-        width: '15%',
+        width: '25%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
         textAlign: 'right',
         paddingRight: 8,
     },
-    negativeLoc: {
-        width: '15%',
-        borderRightColor: borderColor,
-        borderRightWidth: 1,
-        textAlign: 'right',
-        paddingRight: 8,
-    },
-    primeLoc: {
-        width: '15%',
-        textAlign: 'right',
-        paddingRight: 8,
-    }
+    // negativeLoc: {
+    //     width: '15%',
+    //     borderRightColor: borderColor,
+    //     borderRightWidth: 1,
+    //     textAlign: 'right',
+    //     paddingRight: 8,
+    // },
+    // primeLoc: {
+    //     width: '15%',
+    //     textAlign: 'right',
+    //     paddingRight: 8,
+    // }
   });
 
 
-const InvoiceTableRow = ({items}) => {
-    const rows = items.map( item => 
-        <View style={styles.row} key={item.sno.toString()}>
-            <Text style={styles.partNature}>{item.partNature}</Text>
-            <Text style={styles.partNumber}>{item.partNumber}</Text>
-            <Text style={styles.qoh}>{item.qoh}</Text>
-            <Text style={styles.negativeLoc}>{item.negativeLoc}</Text>
-            <Text style={styles.primeLoc}>{item.primeLoc}</Text>
+const InvoiceTableRow = ({templates}) => {
+    console.log(templates)
+    const rows = templates.map( (template) => 
+        <View style={styles.row} >
+            <Text style={styles.partNature}>{template.templateDescription}</Text>
+            <Text style={styles.partNumber}>{template.templateName}</Text>
+            <Text style={styles.qoh}>{template.temmplateId}</Text>
+            {/* <Text style={styles.negativeLoc}>{item.negativeLoc}</Text>
+            <Text style={styles.primeLoc}>{item.primeLoc}</Text> */}
         </View>
     )
     return (<Fragment>{rows}</Fragment> )
 };
-  
+
 export default InvoiceTableRow
