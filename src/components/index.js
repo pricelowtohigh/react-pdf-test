@@ -3,21 +3,39 @@ import React, { useEffect, useState } from "react";
 import Invoice from "./Invoice";
 //import invoice from './data/invoice'
 
+import {PDFViewer} from '@react-pdf/renderer'
+
 function Layout ({templates}) {
 
-    console.log(templates)
+    //console.log(templates)
+    // const [templates, setTemplates] = useState([])
 
-    return (
-      <div>
-        <div className="container">
-            {/* <Switch>
-                <Route path="/"> */}
-                    <Invoice templates={templates[0]}/>
-                {/* </Route>
-            </Switch> */}
-        </div>
-      </div>
-    )
+    // useEffect(() => {
+    //     const url = 'https://apiqa.metroalivemanager.com/guest/page-template';
+        
+    //     fetch(url)
+    //       .then((response) => response.json())
+    //       .then((response) => {
+    //           setTemplates([response])
+    //           console.log('setTemplates')
+    //       })
+    //     console.log('post fetch')
+    //   }, [])
+
+    if (templates) {
+        return (
+            <div>
+              <div className="container">
+                  {/* <Switch>
+                      <Route path="/"> */}
+                          <Invoice templates={templates}/>                    
+                      {/* </Route>
+                  </Switch> */}
+              </div>
+            </div>
+          )
+    }
+    
 }
 
 export default Layout

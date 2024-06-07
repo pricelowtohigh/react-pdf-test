@@ -11,33 +11,31 @@ import './App.css';
 
 function App() {
 
-  const [templates, setTemplates] = useState([])
+  const [templates, setTemplates] = useState([]);
 
-    useEffect(() => {
-      const url = 'https://apiqa.metroalivemanager.com/guest/page-template';
-      fetch(url)
-          .then((response) => response.json())
-          .then((response) => {
-              //console.log(response)
-              setTemplates([response])
-          })
-
-      //console.log(templates)
-    }, [])
-
-  
-  //render() {  // react-pdf sepecific?
-    return (
-        <Fragment>
-            <PDFViewer width="1600" height="900" className="app" >
-                <Layout templates={templates}/>
-            </PDFViewer>
-        </Fragment>
-    );
+  const fetchData = async () => {
+    const response = await fetch('https://apiqa.metroalivemanager.com/guest/page-template');
+    const data = await response.json();
+    setTemplates(data);
   }
 
-  const container = document.getElementById('root');
-  const root = createRoot(container)
-  root.render(<App/>)
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  
+  return (
+    <Fragment>
+        <PDFViewer width="1600" height="900" className="app" >
+          <Invoice templates={templates}/>
+        </PDFViewer>
+    </Fragment>
+  );
+    
+}
+
+  // const container = document.getElementById('root');
+  // const root = createRoot(container)
+  // root.render(<App/>)
 
 export default App;

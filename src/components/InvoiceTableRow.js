@@ -49,16 +49,21 @@ const styles = StyleSheet.create({
 
 const InvoiceTableRow = ({templates}) => {
     console.log(templates)
-    const rows = templates.map( (template) => 
-        <View style={styles.row} >
-            <Text style={styles.partNature}>{template.templateDescription}</Text>
-            <Text style={styles.partNumber}>{template.templateName}</Text>
-            <Text style={styles.qoh}>{template.temmplateId}</Text>
-            {/* <Text style={styles.negativeLoc}>{item.negativeLoc}</Text>
-            <Text style={styles.primeLoc}>{item.primeLoc}</Text> */}
-        </View>
-    )
-    return (<Fragment>{rows}</Fragment> )
+    if (templates) {
+        const rows = templates.map( (template, index) => 
+            <View style={styles.row} key={index}>
+                <Text style={styles.partNature}>{template.templateDescription}</Text>
+                <Text style={styles.partNumber}>{template.templateName}</Text>
+                <Text style={styles.qoh}>{template.temmplateId}</Text>
+                {/* <Text style={styles.negativeLoc}>{item.negativeLoc}</Text>
+                <Text style={styles.primeLoc}>{item.primeLoc}</Text> */}
+            </View>
+        )
+        return (<Fragment>{rows}</Fragment> )
+    } else {
+        return <Fragment></Fragment>
+    }
+    
 };
 
 export default InvoiceTableRow
