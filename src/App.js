@@ -1,12 +1,10 @@
 import React, { Component, Fragment, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import {PDFViewer} from '@react-pdf/renderer'
-import Layout from './components';
-import { createRoot } from 'react-dom/client';
-import Invoice from './components/Invoice'
-import invoice from './data/invoice'
+import { PDFViewer, BlobProvider, PDFDownloadLink } from '@react-pdf/renderer'
+import ReactPDF from '@react-pdf/renderer';
 
-// import logo from './logo.svg';
+import { createRoot } from 'react-dom/client';
+import PDF from './components/PDF'
 import './App.css';
 
 function App() {
@@ -14,8 +12,6 @@ function App() {
   const [templates, setTemplates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null)
-
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,20 +37,32 @@ function App() {
   if (error) {
     return <div>Error: {error.essage}</div>
   }
+
   
-    return (
-      <Fragment>
-          {/* <PDFViewer width="1600" height="900" className="app" > */}
-            <Invoice templates={templates}/>
-          {/* </PDFViewer> */}
-      </Fragment>
-    );
   
-    
+  return (
+    <BlobProvider document={<PDF templates={templates} />}>
+      {({ blob, url, loading, error }) => (
+          <>
+              <PDFDownloadLink document={<PDF templates={templates} />} fileName="my-document.pdf">
+                  {({ blob, url, loading, error }) => (
+                      loading ? 'Loading document...' : 'Download'
+                  )}
+              </PDFDownloadLink>
+
+              {/* Optionally display the PDF in the browser */}
+              {!loading && !error && (
+                  <iframe src={url} width="100%" height="600px" />
+              )}
+          </>
+      )}
+    </BlobProvider>
+  );
 }
 
   // const container = document.getElementById('root');
   // const root = createRoot(container)
   // root.render(<App/>)
+  //ReactPDF.render(<App />);
 
 export default App;

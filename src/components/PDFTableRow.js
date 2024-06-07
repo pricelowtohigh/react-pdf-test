@@ -11,22 +11,15 @@ const styles = StyleSheet.create({
         height: 24,
         fontStyle: 'bold',
     },
-    partNature: {
+    templateName: {
         width: '50%',
         textAlign: 'left',
         borderRightColor: borderColor,
         borderRightWidth: 1,
         paddingLeft: 8,
     },
-    partNumber: {
-        width: '25%',
-        borderRightColor: borderColor,
-        borderRightWidth: 1,
-        textAlign: 'right',
-        paddingRight: 8,
-    },
-    qoh: {
-        width: '25%',
+    templateDescription: {
+        width: '50%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
         textAlign: 'right',
@@ -35,14 +28,12 @@ const styles = StyleSheet.create({
   });
 
 
-const InvoiceTableRow = ({templates}) => {
+const PDFTableRow = ({templates}) => {
     console.log(templates)
-
-    const rows = templates.map( (template, index) => 
-        <View style={styles.row} key={index}>
-            <Text style={styles.partNature}>{template.templateDescription}</Text>
-            <Text style={styles.partNumber}>{template.templateName}</Text>
-            <Text style={styles.qoh}>{template.temmplateId}</Text>
+    const rows = templates.map( (template) => 
+        <View style={styles.row} key={template.templateId}>
+            <Text style={styles.templateName}>{template.templateName}</Text>
+            <Text style={styles.templateDescription}>{template.templateDescription}</Text>
         </View>
     )
 
@@ -51,4 +42,4 @@ const InvoiceTableRow = ({templates}) => {
     
 };
 
-export default InvoiceTableRow
+export default PDFTableRow

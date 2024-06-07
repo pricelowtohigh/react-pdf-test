@@ -17,10 +17,10 @@ const styles = StyleSheet.create({
   });
 
 
-  const InvoiceTitle = ({title}) => (
+  const PDFTitle = ({title}) => (
     <View style={styles.titleContainer}>
         <Text style={styles.reportTitle}>{title}</Text>
     </View>
   );
   
-  export default InvoiceTitle
+  export default PDFTitle
