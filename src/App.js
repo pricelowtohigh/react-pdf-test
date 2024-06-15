@@ -1,9 +1,5 @@
-import React, { Component, Fragment, useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from 'react';
 import { PDFViewer, BlobProvider, PDFDownloadLink } from '@react-pdf/renderer'
-import ReactPDF from '@react-pdf/renderer';
-
-import { createRoot } from 'react-dom/client';
 import PDF from './components/PDF'
 import './App.css';
 
@@ -29,40 +25,25 @@ function App() {
 
     fetchData();
   }, []);
-
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
-
-  if (error) {
-    return <div>Error: {error.essage}</div>
-  }
-
-  
   
   return (
     <BlobProvider document={<PDF templates={templates} />}>
       {({ blob, url, loading, error }) => (
           <>
-              <PDFDownloadLink document={<PDF templates={templates} />} fileName="my-document.pdf">
+              {/* <PDFDownloadLink document={<PDF templates={templates} />} fileName="my-document.pdf">
                   {({ blob, url, loading, error }) => (
                       loading ? 'Loading document...' : 'Download'
                   )}
-              </PDFDownloadLink>
+              </PDFDownloadLink> */}
 
               {/* Optionally display the PDF in the browser */}
               {!loading && !error && (
-                  <iframe src={url} width="100%" height="600px" />
+                  <iframe src={url} width="100%" height="800px" />
               )}
           </>
       )}
     </BlobProvider>
   );
 }
-
-  // const container = document.getElementById('root');
-  // const root = createRoot(container)
-  // root.render(<App/>)
-  //ReactPDF.render(<App />);
 
 export default App;

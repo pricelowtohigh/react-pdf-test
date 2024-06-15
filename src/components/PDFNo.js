@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   });
 
 
-  const InvoiceNo = ({invoice}) => (
+  const PDFNo = ({invoice}) => (
         <Fragment>
             <View style={styles.invoiceNoContainer}>
                 <Text style={styles.label}>Invoice No:</Text>
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
         </Fragment>
   );
   
-  export default InvoiceNo
+  export default PDFNo

@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         borderBottomColor: '#bff0fd',
         borderBottomWidth: 1,
         alignItems: 'center',
-        height: 24,
+        height: 'auto',
         fontStyle: 'bold',
     },
     templateName: {
@@ -23,13 +23,13 @@ const styles = StyleSheet.create({
         borderRightColor: borderColor,
         borderRightWidth: 1,
         textAlign: 'right',
+        paddingLeft: 8,
         paddingRight: 8,
     },
   });
 
 
 const PDFTableRow = ({templates}) => {
-    console.log(templates)
     const rows = templates.map( (template) => 
         <View style={styles.row} key={template.templateId}>
             <Text style={styles.templateName}>{template.templateName}</Text>

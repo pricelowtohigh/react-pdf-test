@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { usePDF, Page, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 import PDFTitle from './PDFTitle'
 import PDFItemsTable from './PDFItemsTable'
+import PDFTableHeader from './PDFTableHeader';
 
 
     const styles = StyleSheet.create({
@@ -17,10 +18,10 @@ import PDFItemsTable from './PDFItemsTable'
     });
 
     const PDF = ({templates}) => (
-        
             <Document>
                 <Page size="A4" style={styles.page}>
-                    <PDFTitle title='Dummy PDF'/>
+                    <PDFTitle title='MetroAlive Templates'/>
+                    <PDFTableHeader></PDFTableHeader>
                     <PDFItemsTable templates={templates} />
                 </Page>
             </Document>

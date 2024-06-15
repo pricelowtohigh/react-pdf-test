@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, View, StyleSheet } from '@react-pdf/renderer';
 
+// CURRENTLY UNUSED COMPONENT
+
 const borderColor = '#90e5fc'
 const styles = StyleSheet.create({
     row: {
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
   });
 
 
-const InvoiceTableFooter = ({items}) => {
+const PDFTableFooter = ({items}) => {
     const total = items.map(item => item.qty * item.rate)
         .reduce((accumulator, currentValue) => accumulator + currentValue , 0)
     return(    
@@ -38,4 +40,4 @@ const InvoiceTableFooter = ({items}) => {
     )
 };
   
-  export default InvoiceTableFooter
+  export default PDFTableFooter
